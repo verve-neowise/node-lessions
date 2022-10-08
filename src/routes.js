@@ -1,9 +1,17 @@
 const { Router } = require('express')
 
-const { home } = require('./controller')
+const { allFruits, addFruit, deleteFruit, managerAdd, managerDelete } = require('./controller')
 
 const app = Router()
 
-app.get('/', home)
+app.get('/', allFruits)
+
+app.get('/add', addFruit)
+
+app.get('/delete', deleteFruit)
+
+app.get('/manager/add', managerAdd)
+
+app.get('/manager/delete', managerDelete)
 
 module.exports = app

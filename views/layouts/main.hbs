@@ -1,12 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Express</title>
-</head>
-<body>
-    {{{body}}}
-</body>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8' />
+        <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <link
+            href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css'
+            rel='stylesheet'
+            integrity='sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi'
+            crossorigin='anonymous'
+        />
+        <title>Express</title>
+    </head>
+    <body>
+        <div class='navbar navbar-dark navbar-expand-lg bg-primary'>
+            <div class='navbar-brand container-sm'>
+                <h1>{{title}}</h1>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class='navbar-nav'>
+                    <li class='nav-item'>
+                        <a href='/' class='nav-link'> Fruits </a>
+                    </li>
+                    <li class='nav-item'>
+                        <a href='/add' class='nav-link'> Add Fruit </a>
+                    </li>
+                    <li class='nav-item'>
+                        <a href='/delete' class='nav-link'> Delete </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class='container-sm py-5'>
+            {{{body}}}
+        </div>
+    </body>
 </html>

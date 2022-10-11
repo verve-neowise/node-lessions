@@ -1,0 +1,28 @@
+<h1 class='display-1'>Todo List</h1>
+
+<form class='d-flex gap-3 align-items-center mt-3' action="/add" method="get">
+    <input class='form-control' name="text" type='text' placeholder='Write todo here...' />
+    <button type="submit" class='btn btn-primary'> Add Todo </button>
+</form>
+
+<div class='card mt-3'>
+    <div class='card-header'>
+        <h1>Todos</h1>
+    </div>
+
+    <div class='card-body'>
+        <ul class='list-group'>
+            {{#each massiv}}
+                <li class='list-group-item d-flex'>
+                    <span class='fw-bold'> {{index}}. </span>
+                    <span class='w-100'> {{text}} </span>
+                    <a href='/delete?index={{@index}}' class='btn btn-danger'>X</a>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <div class='card-footer'>
+        <a href="/clear" class='btn btn-danger'>Clear</a>
+    </div>
+</div>

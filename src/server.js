@@ -8,6 +8,9 @@ const routes = require('./routes')
 // express config
 const app = express()
 
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
 // hbs config
 app.engine('.hbs', engine({ extname: ".hbs" }))
 app.set('view engine', '.hbs')

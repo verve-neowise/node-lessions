@@ -1,5 +1,4 @@
-const groups = []
-// 
+const { groups } = require('./data')
 
 exports.groupPage = (req, res) => {
     res.render('groups', {

@@ -11,18 +11,20 @@
         Add Pupil
     </button>
 </div>
-
+{{!-- pupils.hbs --}}
 <ul class='list-group mt-5 bg-dark text-white'>
-    <li href='#' class='list-group-item bg-dark text-white'>
-        <div class='d-flex w-100 justify-content-between'>
-            <h5 class='mb-1'>Habib Magamedov</h5>
-            <small>
-                <a href='#' class='btn btn-danger btn-sm'> Delete </a>
-            </small>
-        </div>
-        <p class='mb-1'>+99899 456-12-34</p>
-        <small class='text-white-50'> Node.js Individual </small>
-    </li>
+    {{#each pupils}}
+        <li href='#' class='list-group-item bg-dark text-white'>
+            <div class='d-flex w-100 justify-content-between'>
+                <h5 class='mb-1'>{{name}} {{surname}}</h5>
+                <small>
+                    <a href='/pupils/delete?id={{id}}' class='btn btn-danger btn-sm'> Delete </a>
+                </small>
+            </div>
+            <p class='mb-1'>{{phone}}</p>
+            <small class='text-white-50'> {{group}} </small>
+        </li>
+    {{/each}}
 </ul>
 
 <!-- Modal -->
@@ -72,8 +74,9 @@
                     <div class='mb-3'>
                         <label class='form-label'>Group</label>
                         <select name='group' class='form-control'>
-                            <option value='Node.js 146'>Node.js 145</option>
-                            <option value='Node.js 146'>Node.js 146</option>
+                            {{#each groups}}
+                            <option value='{{id}}'>{{name}}</option>
+                            {{/each}}
                         </select>
                     </div>
                 </div>

@@ -14,3 +14,20 @@ exports.deletePupil = (req, res) => {
     res.redirect('/pupils')
 }
 
+exports.addPupil = (req, res) => {
+    const { name, surname, phone, group } = req.body
+
+    const findGroup = groups.find(g => g.id == group)
+
+    const pupil = {
+        id: pupils.length,
+        name,
+        surname,
+        phone,
+        group: findGroup.name
+    }
+
+    pupils.push(pupil)
+
+    res.redirect('/pupils')
+}
